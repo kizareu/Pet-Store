@@ -1,0 +1,18 @@
+[
+  {"id":1,"name":"Mochi","species":"Cat","age":2,"price":69.99,"description":"Playful kitten who loves naps and feather toys.","image":"https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=800&q=60"},
+  {"id":2,"name":"Biscuit","species":"Dog","age":3,"price":249.00,"description":"Friendly and energetic — great for families.","image":"https://images.unsplash.com/photo-1507149833265-60c372daea22?w=800&q=60"},
+  {"id":3,"name":"Peaches","species":"Rabbit","age":1,"price":39.99,"description":"Soft and cuddly, enjoys carrots and calm corners.","image":"https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=800&q=60"},
+  {"id":4,"name":"Luna","species":"Cat","age":4,"price":119.50,"description":"Laid-back adult cat who enjoys sunny windowsills.","image":"https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&q=60"},
+  {"id":5,"name":"Charlie","species":"Dog","age":5,"price":399.99,"description":"Loyal medium-sized dog, good on walks and with kids.","image":"https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=800&q=60"},
+  {"id":6,"name":"Oliver","species":"Cat","age":3,"price":89.00,"description":"Curious and playful — enjoys puzzle feeders.","image":"https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800&q=60"},
+  {"id":7,"name":"Daisy","species":"Dog","age":2,"price":499.00,"description":"Small active dog with lots of personality.","image":"https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=800&q=60"},
+  {"id":8,"name":"Max","species":"Turtle","age":8,"price":129.99,"description":"Gentle aquatic turtle; needs a proper tank and UV light.","image":"https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=800&q=60"},
+  {"id":9,"name":"Coco","species":"Parrot","age":4,"price":299.00,"description":"Colorful parrot with a knack for mimicking short phrases.","image":"https://images.unsplash.com/photo-1504198453319-5ce911bafcde?ixlib=rb-4.0.3&w=800&q=60"},
+  {"id":10,"name":"Pebble","species":"Fish","age":1,"price":9.99,"description":"Hardy community fish that brightens up small tanks.","image":"https://images.unsplash.com/photo-1528825871115-3581a5387919?w=800&q=60"},
+  {"id":11,"name":"Nibbles","species":"Guinea Pig","age":2,"price":44.50,"description":"Sociable guinea pig who loves veggies and cuddle time.","image":"https://images.unsplash.com/photo-1601758123927-4dfc9f6f5b7a?w=800&q=60"},
+  {"id":12,"name":"Slinky","species":"Corn Snake","age":3,"price":159.00,"description":"Beginner-friendly snake with calm temperament.","image":"https://images.unsplash.com/photo-1606312619342-fb6f5a0b4e1b?w=800&q=60"},
+  {"id":13,"name":"Sunny","species":"Budgie","age":2,"price":69.00,"description":"Small budgie — cheerful, easy to care for.","image":"https://images.unsplash.com/photo-1527775868651-3a1b0b8f6f3f?w=800&q=60"},
+  {"id":14,"name":"Hazel","species":"Rabbit","age":3,"price":59.99,"description":"Gentle lop-eared rabbit who enjoys quiet attention.","image":"https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&q=60"},
+  {"id":15,"name":"Rocky","species":"Hamster","age":1,"price":14.99,"description":"Energetic dwarf hamster with a fondness for running wheels.","image":"https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=800&q=60"},
+  {"id":16,"name":"Pippin","species":"Hedgehog","age":2,"price":129.00,"description":"Curious little hedgehog that prefers calm handling sessions.","image":"https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=800&q=60"}
+]
