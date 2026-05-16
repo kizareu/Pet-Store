@@ -7,6 +7,8 @@ import Food from '../views/Food.vue'
 import CartView from '../views/CartView.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
+import Checkout from '../views/Checkout.vue'
+import ThankYou from '../views/ThankYou.vue'
 
 const routes = [
   { path: '/', redirect: '/store' },
@@ -16,6 +18,8 @@ const routes = [
   { path: '/about', name: 'About', component: About },
   { path: '/food', name: 'Food', component: Food },
   { path: '/cart', name: 'Cart', component: CartView },
+  { path: '/checkout', name: 'Checkout', component: Checkout },
+  { path: '/order-confirmation', name: 'ThankYou', component: ThankYou },
   { path: '/signup', name: 'Signup', component: Signup },
   { path: '/login', name: 'Login', component: Login },
 ]

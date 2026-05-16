@@ -18,16 +18,21 @@ export function useAuth() {
 
   const signup = (username: string, phoneOrEmail: string, password: string) => {
     if (!validatePassword(password)) throw new Error('Password must have uppercase, number and symbol and be >=6 chars')
-    const existing = state.users.find((u: any) => u.username === username || u.phone === phoneOrEmail || u.email === phoneOrEmail)
+    const raw = phoneOrEmail.trim()
+    const hasAt = /@/.test(raw)
+    const isDigitsOnly = /^\d+$/.test(raw)
+    if (!hasAt && !isDigitsOnly) throw new Error('Enter a phone (digits only) or a valid email (contains @)')
+
+    const normalizedEmail = hasAt ? raw.toLowerCase() : ''
+    const existing = state.users.find((u: any) => u.username === username || u.phone === raw || (normalizedEmail && u.email && (u.email === normalizedEmail || u.email.toLowerCase() === normalizedEmail)))
     if (existing) throw new Error('User exists')
     const user: any = { username, password }
-    const isDigitsOnly = /^\d+$/.test(phoneOrEmail)
     if (isDigitsOnly) {
-      if (phoneOrEmail.length < 8 || phoneOrEmail.length > 16) throw new Error('Phone must be 8-16 digits')
-      user.phone = phoneOrEmail
+      if (raw.length < 8 || raw.length > 16) throw new Error('Phone must be 8-16 digits')
+      user.phone = raw
     } else {
-      // treat as email when contains letters or non-digit chars
-      user.email = phoneOrEmail
+      // treat as email when contains @; store lowercase
+      user.email = normalizedEmail
     }
     state.users.push(user)
     localStorage.setItem(STORAGE_USERS, JSON.stringify(state.users))
@@ -37,7 +42,17 @@ export function useAuth() {
   }
 
   const login = (identifier: string, password: string) => {
-    const user = state.users.find((u: any) => (u.username === identifier || u.phone === identifier || u.email === identifier) && u.password === password)
+    const id = identifier.trim()
+    let user: any = null
+    if (/@/.test(id)) {
+      const idLower = id.toLowerCase()
+      user = state.users.find((u: any) => u.email && (u.email === idLower || u.email.toLowerCase() === idLower) && u.password === password)
+    } else if (/^\d+$/.test(id)) {
+      user = state.users.find((u: any) => u.phone === id && u.password === password)
+    } else {
+      user = state.users.find((u: any) => u.username === id && u.password === password)
+    }
+
     if (!user) throw new Error('Invalid credentials')
     state.current = { username: user.username, phone: user.phone, email: user.email }
     localStorage.setItem(STORAGE_CURRENT, JSON.stringify(state.current))
@@ -55,11 +70,12 @@ export function useAuth() {
 
   const linkEmail = (email: string) => {
     if (!/@/.test(email)) throw new Error('Invalid email')
+    const normalized = email.trim().toLowerCase()
     if (!state.current) throw new Error('Not logged in')
     const user = state.users.find((u: any) => u.username === state.current.username)
     if (!user) throw new Error('User not found')
-    user.email = email
-    state.current.email = email
+    user.email = normalized
+    state.current.email = normalized
     localStorage.setItem(STORAGE_USERS, JSON.stringify(state.users))
     localStorage.setItem(STORAGE_CURRENT, JSON.stringify(state.current))
   }

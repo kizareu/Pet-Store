@@ -1,38 +1,22 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useCart } from '../composables/useCart'
-import { useUI } from '../composables/useUI'
 import { useSettings } from '../composables/useSettings'
-import Modal from '../components/Modal.vue'
+const router = useRouter()
 const { state, removeItem, updateQty, clear, total } = useCart()
-const { openModal, closeModal } = useUI()
 const settings = useSettings()
 
 const taxRate = computed(() => (settings.state.showTax ? 0.13 : 0))
 const taxAmount = computed(() => total.value * taxRate.value)
 const totalWithTax = computed(() => total.value + taxAmount.value)
 
-const shipping = ref({ name: '', address: '', city: '', postal: '', country: '' })
-const orderComplete = ref(false)
-
 const startCheckout = () => {
   if (state.items.length === 0) {
     alert('Your cart is empty')
     return
   }
-  openModal('Shipping Details', 'Place Order')
-}
-
-const submitOrder = () => {
-  if (!shipping.value.name || !shipping.value.address) {
-    alert('Please enter name and address')
-    return
-  }
-  const totalAmount = total.value
-  orderComplete.value = true
-  setTimeout(() => alert(`Thank you for your purchase! Total: $${totalAmount.toFixed(2)}`), 200)
-  clear()
-  closeModal()
+  router.push('/checkout')
 }
 </script>
 
@@ -63,29 +47,10 @@ const submitOrder = () => {
         <p class="total">Total: {{ settings.state.currency }} {{ total.toFixed(2) }}</p>
         <p v-if="settings.state.showTax" class="tax">Tax (13%): {{ settings.state.currency }} {{ taxAmount.toFixed(2) }}</p>
         <p v-if="settings.state.showTax" class="totalWithTax">Total incl. tax: {{ settings.state.currency }} {{ totalWithTax.toFixed(2) }}</p>
-        <button class="btn" @click="startCheckout">Checkout</button>
-      </div>
-
-      <div v-if="orderComplete" class="thanks">
-        <h3>Thank you for your purchase!</h3>
-        <p>We are processing your order and will email you the confirmation shortly.</p>
+        <button class="btn" @click="startCheckout">Continue</button>
       </div>
     </div>
-    <Modal @confirm="submitOrder">
-      <div class="shipping">
-        <h3>Shipping Details</h3>
-        <label>Name</label>
-        <input v-model="shipping.name" />
-        <label>Address</label>
-        <input v-model="shipping.address" />
-        <label>City</label>
-        <input v-model="shipping.city" />
-        <label>Postal</label>
-        <input v-model="shipping.postal" />
-        <label>Country</label>
-        <input v-model="shipping.country" />
-      </div>
-    </Modal>
+    
   </section>
 </template>
 <style scoped>
