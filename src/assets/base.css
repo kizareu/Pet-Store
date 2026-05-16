@@ -21,8 +21,19 @@
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 }
 
+/* shadow / interactive variables */
+:root {
+  --shadow-color: rgba(0,0,0,0.06);
+  --shadow-color-strong: rgba(0,0,0,0.12);
+  --hover-bg: rgba(0,0,0,0.04);
+  --backdrop: rgba(0,0,0,0.5);
+}
+
 /* semantic color variables for this project */
 :root {
+  --accent: #16a34a;
+  --accent-rgb: 22,163,74;
+  --card: #ffffff;
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
@@ -48,6 +59,37 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
   }
+}
+
+/* theme classes for manual override */
+.theme-dark {
+  --color-background: var(--vt-c-black);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+  --card: #1b1b1b;
+  --accent: #16a34a;
+  --shadow-color: rgba(255,255,255,0.03);
+  --shadow-color-strong: rgba(255,255,255,0.06);
+  --hover-bg: rgba(255,255,255,0.03);
+  --backdrop: rgba(0,0,0,0.6);
+}
+
+.theme-light {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+  --card: #ffffff;
+  --accent: #16a34a;
+  --shadow-color: rgba(0,0,0,0.06);
+  --shadow-color-strong: rgba(0,0,0,0.12);
+  --hover-bg: rgba(0,0,0,0.04);
+  --backdrop: rgba(0,0,0,0.5);
 }
 
 *,

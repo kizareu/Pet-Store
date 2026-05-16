@@ -1,0 +1,51 @@
+[
+  {
+    "id": "f1",
+    "name": "Puppy Kibble - Chicken",
+    "for": "Dog",
+    "price": 29.99,
+    "image": "https://picsum.photos/seed/food1/800/600",
+    "nutrition": { "calories": 350, "protein_g": 24, "fat_g": 14, "fiber_g": 4 }
+  },
+  {
+    "id": "f2",
+    "name": "Adult Cat Formula - Salmon",
+    "for": "Cat",
+    "price": 24.5,
+    "image": "https://picsum.photos/seed/food2/800/600",
+    "nutrition": { "calories": 320, "protein_g": 28, "fat_g": 12, "fiber_g": 3 }
+  },
+  {
+    "id": "f3",
+    "name": "Rabbit Pellets",
+    "for": "Rabbit",
+    "price": 12.99,
+    "image": "https://picsum.photos/seed/food3/800/600",
+    "nutrition": { "calories": 210, "protein_g": 16, "fat_g": 2, "fiber_g": 18 }
+  }
+  ,
+  {
+    "id": "f4",
+    "name": "Senior Dog Blend - Beef",
+    "for": "Dog",
+    "price": 34.99,
+    "image": "https://picsum.photos/seed/food4/800/600",
+    "nutrition": { "calories": 330, "protein_g": 22, "fat_g": 10, "fiber_g": 5 }
+  },
+  {
+    "id": "f5",
+    "name": "Small Breed Kibble",
+    "for": "Dog",
+    "price": 27.5,
+    "image": "https://picsum.photos/seed/food5/800/600",
+    "nutrition": { "calories": 360, "protein_g": 26, "fat_g": 14, "fiber_g": 3 }
+  },
+  {
+    "id": "f6",
+    "name": "Sensitive Stomach - Wet Mix",
+    "for": "Cat",
+    "price": 19.99,
+    "image": "https://picsum.photos/seed/food6/800/600",
+    "nutrition": { "calories": 150, "protein_g": 12, "fat_g": 6, "fiber_g": 1 }
+  }
+]
