@@ -14,6 +14,7 @@ const storageKey = 'petstore:defaultShipping'
 const shipping = reactive({ name: '', address: '', city: '', postal: '', country: '', isDefault: false })
 const promoCode = reactive({ code: '', applied: false, discount: 0 })
 const shippingCost = reactive({ amount: 5.0 })
+const lastOrder = ref<any>(null)
 
 // restore default shipping from localStorage if present
 try {
@@ -124,9 +125,6 @@ export function useCart() {
       // ignore storage errors
     }
   }
-
-  // last placed order
-  const lastOrder = ref<any>(null)
 
   const createOrder = (order: any) => {
     const id = String(Date.now())
